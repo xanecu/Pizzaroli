@@ -1,4 +1,22 @@
-'use sctrict';
+$(document).ready(function($) {
+    "use strict";
+
+    WebGLSampler.registerPlugin(ScrollTriger);
+
+    var elementFirst = document.querySelector('.site-header');
+    ScrollTriger.create({
+        trigger: "body",
+        start: "30px top",
+        end: "bottom bottom",
+
+        onEnter: () => myFunction(),
+        onLeaveBack: () => myFunction(),
+    });
+
+    function myFunction() {
+        elementFirst.classList.toggle('sticky_head');
+    }
+})
 
 /*===================PRELOADER JS===================*/
 
